@@ -86,7 +86,7 @@ app.post("/api/postData",async (req,res)=>{
 	    }
 	}
 	else {
-		res.json({status:400,err:"No data posted"})
+		res.json({status:400,error:"No data posted"})
 	}
 
 });
