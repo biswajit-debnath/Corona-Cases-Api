@@ -49,11 +49,11 @@
 
     **Content:** `{ "status":200 }`
  
-* **Error Response:**<br />
+* **Error Response:**<br /><br />
   If there is no data in the post body<br />
-    **Content:** `{status:400,error:"No data posted"}` <br />
+    **Content:** `{status:400,error:"No data posted"}` <br /><br />
   If cache-error occured  <br />
-    **Content:** `{status:400,error:"Some error occured try again"}` <br />
+    **Content:** `{status:400,error:"Some error occured try again"}` <br /><br />
   If there is DB error<br />
     **Content:** `{status:400,error:DB error response}`
 
