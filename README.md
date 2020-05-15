@@ -23,7 +23,7 @@
  
 * **Error Response:**<br />
   If you entered a state that is not in dataset<br />
-    **Content:** `{"status":200 , error : "No such state found" }`
+    **Content:** `{"status":200 , error : "No data found" }`
 
 
 **Post State data**
@@ -53,7 +53,7 @@
   If there is no data in the post body<br />
     **Content:** `{status:400,error:"No data posted"}` <br /><br />
   If cache-error occured  <br />
-    **Content:** `{status:400,error:"Some error occured try again"}` <br /><br />
+    **Content:** `{status:400,error:"Some error occured try again"}` <br /><br />s
   If there is DB error<br />
     **Content:** `{status:400,error:DB error response}`
 

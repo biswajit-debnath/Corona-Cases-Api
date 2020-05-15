@@ -30,7 +30,6 @@ mongoose.connect(
 app.get("/api/getData/:state",async (req,res)=>{
 
 	let state = req.params.state;
-	if(state == null) res.json({state:404,error:"No such state found"})
 
 	state = myCache.get( state );
 	if ( state == undefined ){
