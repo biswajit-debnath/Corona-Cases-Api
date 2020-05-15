@@ -30,8 +30,10 @@ mongoose.connect(
 app.get("/api/getData/:state",async (req,res)=>{
 
 	let state = req.params.state;
-	total = myCache.get( state );
-	if ( total == undefined ){
+	if(state == null) res.json({state:404,error:"No such state found"})
+
+	state = myCache.get( state );
+	if ( state == undefined ){
 		//If cache miss return the data from db
 		// let name = await db_data.findOne({}, {sort:{$natural:-1}});
     	res.json({status:400,error:"No data found"});
