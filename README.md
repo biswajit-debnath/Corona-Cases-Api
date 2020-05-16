@@ -19,7 +19,8 @@
 
 * **Success Response:** <br />
 
-    **Content:** `{"status":200,"state":"assam","current_data":{"confirmed":90,"recovered":41,"deaths":45,"total":176, "last_updated":"16/5/2020"}}`
+    **Content:**<br />
+     `{"status":200,"state":"assam","current_data":{"confirmed":90,"recovered":41,"deaths":45,"total":176, "last_updated":"16/5/2020"}}`
  
 * **Error Response:**<br />
   If you entered a state that is not in dataset<br />
