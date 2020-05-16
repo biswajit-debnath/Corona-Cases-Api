@@ -19,7 +19,7 @@
 
 * **Success Response:** <br />
 
-    **Content:** `{"status":200,"state":"assam","current_data":{"confirmed":90,"recovered":41,"deaths":45,"total":176}}`
+    **Content:** `{"status":200,"state":"assam","current_data":{"confirmed":90,"recovered":41,"deaths":45,"total":176, "last_updated":"16/5/2020"}}`
  
 * **Error Response:**<br />
   If you entered a state that is not in dataset<br />
@@ -49,11 +49,11 @@
 
     **Content:** `{ "status":200 }`
  
-* **Error Response:**<br /><br />
+* **Error Response:**<br /><br /><br />
   If there is no data in the post body<br />
-    **Content:** `{status:400,error:"No data posted"}` <br /><br />
+    **Content:** `{status:400,error:"No data posted"}` <br /><br /><br />
   If cache-error occured  <br />
-    **Content:** `{status:400,error:"Some error occured try again"}` <br /><br />s
+    **Content:** `{status:400,error:"Some error occured try again"}` <br /><br /><br />
   If there is DB error<br />
     **Content:** `{status:400,error:DB error response}`
 

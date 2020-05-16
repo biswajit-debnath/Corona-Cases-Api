@@ -30,15 +30,15 @@ mongoose.connect(
 app.get("/api/getData/:state",async (req,res)=>{
 
 	let state = req.params.state;
+	console.log(state);
 
-	state = myCache.get( state );
-	if ( state == undefined ){
+	let current_data = myCache.get( state );
+	if ( current_data == undefined ){
 		//If cache miss return the data from db
 		// let name = await db_data.findOne({}, {sort:{$natural:-1}});
     	res.json({status:400,error:"No data found"});
 	}
 	else {
-		let current_data = myCache.get( state );
 		
 		res.json({status:200,state:state,current_data:current_data});
 	}
@@ -52,12 +52,14 @@ app.get("/api/getData/:state",async (req,res)=>{
 app.post("/api/postData",async (req,res)=>{
 
 	if(req.body){
-		let { state,confirmed,recovered,deaths } = req.body;
+		let { state,confirmed,recovered,deaths,date } = req.body;
 		confirmed=parseInt(confirmed);
 		recovered=parseInt(recovered);
 		deaths=parseInt(deaths);
 
-		let reqDataRecord= { confirmed:confirmed, recovered:recovered, deaths:deaths , total:confirmed+recovered+deaths}
+
+		let reqDataRecord= { confirmed:confirmed, recovered:recovered, deaths:deaths , total:confirmed+recovered+deaths, last_updated:date}
+
 
 		//Storing in cache
 		cache_store_success = myCache.set( state , reqDataRecord);
@@ -74,8 +76,8 @@ app.post("/api/postData",async (req,res)=>{
 	      confirmed: confirmed,
 	      recovered: recovered,
 	      deaths: deaths,
-	      total:confirmed+recovered+deaths
-
+	      total:confirmed+recovered+deaths,
+	      last_updated: date
 	    });
 	    try {
 	      let saved_record = await record.save();

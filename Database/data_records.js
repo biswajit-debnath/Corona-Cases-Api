@@ -30,6 +30,9 @@ const schema = new mongoose.Schema({
   },
   total_visitor: {
     type: Number,
+  },
+  last_updated: {
+    type: String
   }
   
 });
