@@ -43,7 +43,7 @@
 
    **Example:**
  
-   `{ state:"assam", confirmed: 86, recovered: 41, deaths:2 }`
+   `{ state:"assam", confirmed: 86, recovered: 41, deaths:2, date: "16/05/2020" }`
 
 
 * **Success Response:** <br />
